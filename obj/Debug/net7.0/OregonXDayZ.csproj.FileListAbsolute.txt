@@ -1,0 +1,15 @@
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\bin\Debug\net7.0\OregonXDayZ.exe
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\bin\Debug\net7.0\OregonXDayZ.deps.json
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\bin\Debug\net7.0\OregonXDayZ.runtimeconfig.json
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\bin\Debug\net7.0\OregonXDayZ.dll
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\bin\Debug\net7.0\OregonXDayZ.pdb
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.csproj.AssemblyReference.cache
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.AssemblyInfoInputs.cache
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.AssemblyInfo.cs
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.csproj.CoreCompileInputs.cache
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.dll
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\refint\OregonXDayZ.dll
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.pdb
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\OregonXDayZ.genruntimeconfig.cache
+C:\Users\DSU\Documents\OregonXDayz\OregonXDayZ\obj\Debug\net7.0\ref\OregonXDayZ.dll
