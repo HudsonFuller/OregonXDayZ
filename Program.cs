@@ -19,6 +19,7 @@ namespace OregonXDayZ
                     case "1":
                         User myCharacter = new User();
                         Location location = new Location();
+                        location.newDay();
                         break;
                     case "0":
                         break;

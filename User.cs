@@ -8,5 +8,7 @@ namespace OregonXDayZ
     public class User
     {
         Stats userStats = new Stats();
+        Vitals userVitals = new Vitals();
+        Inventory userInventory = new Inventory();
     }
 }

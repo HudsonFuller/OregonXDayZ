@@ -7,6 +7,11 @@ namespace OregonXDayZ
 {
     public class Location
     {
+        private int day = 1;
         
+        public void newDay(){
+            Console.WriteLine("Day" + day);
+            }
     }
+
 }

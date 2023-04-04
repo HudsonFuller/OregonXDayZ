@@ -10,5 +10,7 @@ namespace OregonXDayZ
         public int strength = 1;
         public int defense = 1;
         public int stealth = 1;
+        private int xp = 0;
+        public int level = 1;
     }
 }
