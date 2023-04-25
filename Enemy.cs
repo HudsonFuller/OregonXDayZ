@@ -37,8 +37,9 @@ namespace OregonXDayZ
                 Console.WriteLine(this.name + " has been Slain");
             }
             else{
-                user.health=user.health - enemyAttack;
-                Console.WriteLine("You have taken " + enemyAttack + " damage, your health is now "+ user.health);
+                user.changeHealth(enemyAttack);
+                int HP = user.getHealth();
+                Console.WriteLine("You have taken " + enemyAttack + " damage, your health is now "+ HP);
             }
             
         }

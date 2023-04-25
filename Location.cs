@@ -14,6 +14,7 @@ namespace OregonXDayZ
         public void Begin(){
                 while(myCharacter.getHealth()>=0){
                 this.newDay();
+                day++;
             }
             Console.WriteLine("Your Game has ended on day "+day);
         }
@@ -25,9 +26,10 @@ namespace OregonXDayZ
             if(rnd.Next(3)==enemyQ)
                 enemyBool=true;
             if(enemyBool == true){
+                Console.WriteLine("Bread");
                 Enemy enemy = new Enemy(day);
                 int myAttackDif = myCharacter.getStrength() - enemy.defense;
-                int enemyAttackDif = enemy.attack - myCharacter.getDefense();
+                int enemyAttackDif = enemy.attack - myCharacter.getDefense()+1;
                 int sneakDif = myCharacter.getStealth() - enemy.wits;
                 string user="7";
                 
@@ -52,7 +54,6 @@ namespace OregonXDayZ
                     }
                 }
             }
-            Console.ReadLine();
         }
     }
 
