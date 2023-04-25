@@ -17,9 +17,8 @@ namespace OregonXDayZ
                 user = Console.ReadLine();
                 switch(user){
                     case "1":
-                        User myCharacter = new User();
                         Location location = new Location();
-                        location.newDay();
+                        location.Begin();
                         break;
                     case "0":
                         break;

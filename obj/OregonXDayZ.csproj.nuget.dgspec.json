@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj": {}
+    "C:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj": {}
   },
   "projects": {
-    "c:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj": {
+    "C:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj",
+        "projectUniqueName": "C:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj",
         "projectName": "OregonXDayZ",
-        "projectPath": "c:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj",
+        "projectPath": "C:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\OregonXDayZ.csproj",
         "packagesPath": "C:\\Users\\DSU\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\obj\\",
+        "outputPath": "C:\\Users\\DSU\\Documents\\OregonXDayz\\OregonXDayZ\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

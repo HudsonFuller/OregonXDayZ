@@ -10,5 +10,18 @@ namespace OregonXDayZ
         Stats userStats = new Stats();
         Vitals userVitals = new Vitals();
         Inventory userInventory = new Inventory();
+        public int getHealth(){
+            return userVitals.Health;
+        }
+        public int getStrength(){
+            return userStats.strength;
+        }
+        public int getDefense(){
+            return userStats.defense;
+        }
+        public int getStealth(){
+            return userStats.stealth;
+        }
     }
+    
 }

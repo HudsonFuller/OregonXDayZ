@@ -8,10 +8,52 @@ namespace OregonXDayZ
     public class Location
     {
         private int day = 1;
-        
-        public void newDay(){
-            Console.WriteLine("Day" + day);
+        private string[] places = {"Farmhouse", "Barn", "Cemetary", "Bakery", "Mansion", "Firehouse", "PoliceStation", "WatchTower", "Hospital", "GroceryStore"};
+        Random rnd = new Random();
+        User myCharacter = new User();
+        public void Begin(){
+                while(myCharacter.getHealth()>=0){
+                this.newDay();
             }
+            Console.WriteLine("Your Game has ended on day "+day);
+        }
+        private void newDay(){
+            Console.WriteLine("Day " + day);
+            Console.WriteLine("You have stumbled upon a " + places[rnd.Next(10)]);
+            int enemyQ = 1;
+            bool enemyBool=false;
+            if(rnd.Next(3)==enemyQ)
+                enemyBool=true;
+            if(enemyBool == true){
+                Enemy enemy = new Enemy(day);
+                int myAttackDif = myCharacter.getStrength() - enemy.defense;
+                int enemyAttackDif = enemy.attack - myCharacter.getDefense();
+                int sneakDif = myCharacter.getStealth() - enemy.wits;
+                string user="7";
+                
+                while(user!="complete"){
+                    Console.WriteLine("1: Attack the " + enemy.name);
+                    Console.WriteLine("2: Try to Sneak past the Enemy");
+                    user = Console.ReadLine();
+                    switch (user)
+                    {
+                        case "1":
+                            enemy.goAttack(myAttackDif, enemyAttackDif, myCharacter, enemy);
+                            Console.WriteLine("Check");
+                            user= "complete";
+                            break;
+                        case "2":
+                            //enemy.sneak(sneakDif, myCharacter);
+                            user = "complete";
+                            break;
+                        default:
+                            Console.WriteLine("Number Not Found");
+                            break;
+                    }
+                }
+            }
+            Console.ReadLine();
+        }
     }
 
 }
