@@ -22,11 +22,21 @@ namespace OregonXDayZ
         public int getStealth(){
             return userStats.stealth;
         }
+        public int getLevel()
+        {
+            return userStats.level;
+        }
         public void changeHealth(int damage)
         {
             userVitals.Health= userVitals.Health-damage;
             return;
         }
+        public void gainXp(int xp)
+        {
+            userStats.xpGain(xp);
+            return;
+        }
+
     }
     
 }

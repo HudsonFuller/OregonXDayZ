@@ -26,8 +26,8 @@ namespace OregonXDayZ
             if(rnd.Next(3)==enemyQ)
                 enemyBool=true;
             if(enemyBool == true){
-                Console.WriteLine("Bread");
-                Enemy enemy = new Enemy(day);
+
+                Enemy enemy = new Enemy(myCharacter.getLevel());
                 int myAttackDif = myCharacter.getStrength() - enemy.defense;
                 int enemyAttackDif = enemy.attack - myCharacter.getDefense()+1;
                 int sneakDif = myCharacter.getStealth() - enemy.wits;
@@ -41,11 +41,10 @@ namespace OregonXDayZ
                     {
                         case "1":
                             enemy.goAttack(myAttackDif, enemyAttackDif, myCharacter, enemy);
-                            Console.WriteLine("Check");
                             user= "complete";
                             break;
                         case "2":
-                            //enemy.sneak(sneakDif, myCharacter);
+                            enemy.sneak(sneakDif, myCharacter, enemy, myAttackDif);
                             user = "complete";
                             break;
                         default:
@@ -54,6 +53,15 @@ namespace OregonXDayZ
                     }
                 }
             }
+            if (myCharacter.getHealth() <= 0)
+                return;
+            int itemAmount = rnd.Next(3);
+            while(itemAmount > 0)
+            {
+                Item itemFind= new Item();
+
+            }
+
         }
     }
 
