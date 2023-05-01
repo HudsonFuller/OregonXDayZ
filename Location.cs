@@ -12,11 +12,12 @@ namespace OregonXDayZ
         Random rnd = new Random();
         User myCharacter = new User();
         public void Begin(){
-                while(myCharacter.getHealth()>=0){
+                while(myCharacter.getHealth()>0){
                 this.newDay();
                 day++;
             }
             Console.WriteLine("Your Game has ended on day "+day);
+            return; 
         }
         private void newDay(){
             Console.WriteLine("Day " + day);
@@ -55,13 +56,68 @@ namespace OregonXDayZ
             }
             if (myCharacter.getHealth() <= 0)
                 return;
-            int itemAmount = rnd.Next(3);
-            while(itemAmount > 0)
+            int itemAmount = rnd.Next(3)+1;
+            int x = 0;
+            while (x < itemAmount)
             {
-                Item itemFind= new Item();
+                x++;
+                Item itemFind = new Item();
+                Console.WriteLine("You found a " + itemFind.name);
+                string choice = "bruh";
+                if (itemFind.typeName == "Clothing" || itemFind.typeName == "Weapon")
+                {
+                    while (choice != "equip")
+                    {
+                        Console.WriteLine("Current Clothing and Weapons");
+                        myCharacter.printEquipables();
+                        if (itemFind.typeName == "Weapon")
+                        {
+                            Console.WriteLine("1: equip " + itemFind.name + " " + itemFind.attackAmount + " attack amount");
+                        }
+                        if (itemFind.typeName == "Clothing")
+                        {
+                            Console.WriteLine("1: equip " + itemFind.name + " " + itemFind.defenseAmount + " defense amount");
+                        }
+                        Console.WriteLine("2: leave item");
+                        choice = Console.ReadLine();
+                        switch (choice)
+                        {
+                            case "1":
+                                myCharacter.equipItem(itemFind);
+                                choice = "equip";
+                                break;
+                            case "2":
+                                choice = "equip";
+                                break;
+                            default:
+                                Console.WriteLine("No Choice Found");
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    if (itemFind.typeName == "Food")
+                    {
+                        Console.WriteLine("You have Consumed the " + itemFind.name);
+                        myCharacter.gainHunger(itemFind.restoreAmount);
+                    }
+                    else if (itemFind.typeName == "Drink")
+                    {
+                        Console.WriteLine("You have Drank the " + itemFind.name);
+                        myCharacter.gainDrink(itemFind.restoreAmount);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You have used the " + itemFind.name);
+                        myCharacter.gainHealth(itemFind.restoreAmount);
+                    }
+                }
 
             }
-
+            myCharacter.printVitals();
+            myCharacter.newDayChange();
+            Console.ReadLine();
         }
     }
 

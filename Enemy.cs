@@ -25,15 +25,15 @@ namespace OregonXDayZ
         }
         public void goAttack(int myAttack, int enemyAttack, User user, Enemy enemy)
         {
-            int aFormula = myAttack * 100;
+            int aFormula = myAttack * 50;
             if (aFormula <= 0)
             {
-                aFormula = 100;
+                aFormula = 50;
             }
             int infin = 0;
             while (infin == 0)
             {
-                if (Math.Abs((rnd.Next(1000) + 1) - (rnd.Next(1000) + 1)) < 50)
+                if (Math.Abs((rnd.Next(1000) + 1) - (rnd.Next(1000) + 1)) < 25)
                 {
                     enemy.health = 0;
                     Console.WriteLine("Critical Hit");
@@ -54,7 +54,6 @@ namespace OregonXDayZ
                     int xp = rnd.Next(125) + 100;
                     Console.WriteLine(this.name + " has been Slain");
                     user.gainXp(xp);
-                    Console.ReadLine();
                     return;
                 }
                 else
@@ -63,7 +62,7 @@ namespace OregonXDayZ
                     {
                         enemyAttack = 1;
                     }
-                    user.changeHealth(enemyAttack);
+                    user.changeHealth(enemyAttack*10);
                     int HP = user.getHealth();
                     Console.WriteLine("You have taken " + enemyAttack + " damage, your health is now " + HP);
                     Console.ReadLine();
@@ -86,12 +85,11 @@ namespace OregonXDayZ
                 Console.WriteLine("You have snuck past the " + enemy.name);
                 int xp = rnd.Next(125) + 100;
                 user.gainXp(xp);
-                Console.ReadLine();
             }
             else
             {
                 Console.WriteLine("You faild the sneak");
-                user.changeHealth(enemy.attack);
+                user.changeHealth(enemy.attack*10);
                 int HP = user.getHealth();
                 Console.WriteLine("You have taken " + enemy.attack + " damage, your health is now " + HP);
                 Console.WriteLine("You must now fight");

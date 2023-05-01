@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace OregonXDayZ
 {
-    public class Inventory
+    public class Inventory : Item
     {
-        public int Size= 10;
-        private Item[] items;
-        private int itemAmount = 0;
+        public Item[] hands = { null, null };
+        public Item clothing = null;
     }
 
 }

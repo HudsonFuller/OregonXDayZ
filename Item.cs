@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OregonXDayZ
 {
-    internal class Item
+    public class Item
     {
         Random rnd = new Random();
         private string[] itemType = { "Clothing", "Food", "Drink", "Weapon" , "Healing" };
@@ -25,14 +25,22 @@ namespace OregonXDayZ
             this.typeName = itemType[rnd.Next(5)];
             if (this.typeName == "Food" || this.typeName == "Drink" || this.typeName == "Healing")
             {
-                this.restoreAmount = (rnd.Next(5) + 1) * 5;
+                if(this.typeName == "Food")
+                    this.name = foodType[rnd.Next(5)];
+                else if(this.typeName=="Drink")
+                    this.name = drinkType[rnd.Next(5)];
+                else
+                    this.name = healingType[rnd.Next(5)];
+                this.restoreAmount = (rnd.Next(5) + 1) * 10;
             }
             else if(this.typeName == "Weapon")
             {
+                this.name = weaponType[rnd.Next(5)];
                 this.attackAmount = rnd.Next(5) + 1;
             }
             else
             {
+                this.name = clothingType[rnd.Next(5)];
                 this.defenseAmount = rnd.Next(5) + 1;
             }
         }

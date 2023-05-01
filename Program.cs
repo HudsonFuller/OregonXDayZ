@@ -19,6 +19,7 @@ namespace OregonXDayZ
                     case "1":
                         Location location = new Location();
                         location.Begin();
+                        user = "0";
                         break;
                     case "0":
                         break;
@@ -28,6 +29,7 @@ namespace OregonXDayZ
                         
                 }
             }
+            Console.ReadLine();
 
             
         }

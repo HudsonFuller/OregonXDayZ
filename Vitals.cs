@@ -10,6 +10,5 @@ namespace OregonXDayZ
         public int Hunger= 100;
         public int Thirst= 100;
         public int Health= 100;
-        public int Rest= 100; 
     }
 }
