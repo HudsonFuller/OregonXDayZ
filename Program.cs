@@ -10,6 +10,7 @@ namespace OregonXDayZ
 
         static void Main(string[] args)
         {
+            //Starting Game
             string user = "3";
             Console.WriteLine("1: New Game");
             Console.WriteLine("0: Quit");

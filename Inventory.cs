@@ -7,6 +7,7 @@ namespace OregonXDayZ
 {
     public class Inventory : Item
     {
+        // declares two hands and one item of clothing, must be set to null
         public Item[] hands = { null, null };
         public Item clothing = null;
     }

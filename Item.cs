@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace OregonXDayZ
 {
     public class Item
-    {
+    { // has a list of different items that can be found
         Random rnd = new Random();
         private string[] itemType = { "Clothing", "Food", "Drink", "Weapon" , "Healing" };
         private string[] foodType = { "Steak", "Hot Dog", "Twinkie", "Apple", "Canned Chicken" };
@@ -22,6 +22,7 @@ namespace OregonXDayZ
         public string name;
         public Item()
         {
+            // this is a constructor that makes a random item to give ot the user.
             this.typeName = itemType[rnd.Next(5)];
             if (this.typeName == "Food" || this.typeName == "Drink" || this.typeName == "Healing")
             {

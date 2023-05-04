@@ -7,6 +7,7 @@ namespace OregonXDayZ
 {
         public class User
     {
+        //this has the fields whic hare seperate classes
         Stats userStats = new Stats();
         Vitals userVitals = new Vitals();
         Inventory userInventory = new Inventory();
@@ -76,11 +77,13 @@ namespace OregonXDayZ
         }
         public void newDayChange()
         {
+            // my decrementing hunger and thirst counters for the days
             userVitals.Thirst -= 10;
             userVitals.Hunger -= 10;
         }
         public void printEquipables()
         {
+            // this goes through and checks if you are wearing or holding items, and will then proceed to print them and their defense or attack level
             if (userInventory.clothing == null)
                 Console.WriteLine("No Clothing Worn");
             else
@@ -130,6 +133,7 @@ namespace OregonXDayZ
                 }
                 else
                 {
+                    //Looks for the smaller item if you choose to equip the new weapon you find. 
                     Item itemCheck1 =  userInventory.hands[0];
                     Item itemCheck2 = userInventory.hands[1];
                     if (itemCheck1.attackAmount < itemCheck2.attackAmount)

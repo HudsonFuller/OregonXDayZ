@@ -8,10 +8,13 @@ namespace OregonXDayZ
     public class Location
     {
         private int day = 1;
+        //random name for the place
         private string[] places = {"Farmhouse", "Barn", "Cemetary", "Bakery", "Mansion", "Firehouse", "PoliceStation", "WatchTower", "Hospital", "GroceryStore"};
         Random rnd = new Random();
+        // declares the new user which gets used for the whole game
         User myCharacter = new User();
         public void Begin(){
+            //this is the loop for the entire game
                 while(myCharacter.getHealth()>0){
                 this.newDay();
                 day++;
@@ -24,11 +27,13 @@ namespace OregonXDayZ
             Console.WriteLine("You have stumbled upon a " + places[rnd.Next(10)]);
             int enemyQ = 1;
             bool enemyBool=false;
+            // random to find if there is an enemy here
             if(rnd.Next(3)==enemyQ)
                 enemyBool=true;
             if(enemyBool == true){
-
+                //delcares a new enemy to fight, based on the user level. 
                 Enemy enemy = new Enemy(myCharacter.getLevel());
+                // these all determine the differnece in attack, defense, sneak, and wits
                 int myAttackDif = myCharacter.getStrength() - enemy.defense;
                 int enemyAttackDif = enemy.attack - myCharacter.getDefense()+1;
                 int sneakDif = myCharacter.getStealth() - enemy.wits;
@@ -38,6 +43,7 @@ namespace OregonXDayZ
                     Console.WriteLine("1: Attack the " + enemy.name);
                     Console.WriteLine("2: Try to Sneak past the Enemy");
                     user = Console.ReadLine();
+                    // this is the choice for what to do against the enemy
                     switch (user)
                     {
                         case "1":
@@ -54,16 +60,20 @@ namespace OregonXDayZ
                     }
                 }
             }
+            // checks if the user died
             if (myCharacter.getHealth() <= 0)
                 return;
+            // our random item amount
             int itemAmount = rnd.Next(3)+1;
             int x = 0;
             while (x < itemAmount)
             {
                 x++;
+                //declares a new random item
                 Item itemFind = new Item();
                 Console.WriteLine("You found a " + itemFind.name);
                 string choice = "bruh";
+                //this loop is looking for equpiable items, and will then print the equpiables you have on, plus the attack/defense of the item
                 if (itemFind.typeName == "Clothing" || itemFind.typeName == "Weapon")
                 {
                     while (choice != "equip")
@@ -97,6 +107,7 @@ namespace OregonXDayZ
                 }
                 else
                 {
+                    // we will auto restore the desired stat if the item to restore it is found. 
                     if (itemFind.typeName == "Food")
                     {
                         Console.WriteLine("You have Consumed the " + itemFind.name);
@@ -112,6 +123,7 @@ namespace OregonXDayZ
                         Console.WriteLine("You have used the " + itemFind.name);
                         myCharacter.gainHealth(itemFind.restoreAmount);
                     }
+                    Console.ReadLine();
                 }
 
             }

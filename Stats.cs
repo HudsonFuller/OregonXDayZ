@@ -18,6 +18,8 @@ namespace OregonXDayZ
             int x = 1;
             while (x == 1)
             {
+                // this checks an exponential counter to see if you level up, based on xp gain.
+                // the x++ is in this to deteremine if you could possibly level up twice
                 if (this.xp > level * 100 * Math.Pow(1.01, level))
                 {
                     this.level++;
@@ -36,6 +38,7 @@ namespace OregonXDayZ
                 Console.WriteLine("2: up defense, current "+ this.defense);
                 Console.WriteLine("3: up stealth, current "+this.stealth);
                 user = Console.ReadLine();
+                // every level up you get to add a stat to your character. 
                 switch (user)
                 {
                     case "1":

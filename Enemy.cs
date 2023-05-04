@@ -25,6 +25,7 @@ namespace OregonXDayZ
         }
         public void goAttack(int myAttack, int enemyAttack, User user, Enemy enemy)
         {
+            // aFormula is based on the difference between your attack and enemy defense, and this determines our standard deviation
             int aFormula = myAttack * 50;
             if (aFormula <= 0)
             {
@@ -33,6 +34,7 @@ namespace OregonXDayZ
             int infin = 0;
             while (infin == 0)
             {
+                //this is a critical hit, if the two random rolls are less than 25 apart
                 if (Math.Abs((rnd.Next(1000) + 1) - (rnd.Next(1000) + 1)) < 25)
                 {
                     enemy.health = 0;
@@ -41,6 +43,7 @@ namespace OregonXDayZ
                 }
                 else if (Math.Abs((rnd.Next(1000) + 1) - (rnd.Next(1000) + 1)) < aFormula)
                 {
+                    // checks if two numbers are aFormula apart
                     if (myAttack <= 0)
                     {
                         myAttack = 1;
@@ -64,7 +67,7 @@ namespace OregonXDayZ
                     }
                     user.changeHealth(enemyAttack*10);
                     int HP = user.getHealth();
-                    Console.WriteLine("You have taken " + enemyAttack + " damage, your health is now " + HP);
+                    Console.WriteLine("You have taken " + enemyAttack*10 + " damage, your health is now " + HP);
                     Console.ReadLine();
                     if (HP <= 0)
                     {
@@ -78,6 +81,7 @@ namespace OregonXDayZ
         }
         public void sneak(int sneakDif, User user, Enemy enemy, int myAttack)
         {
+            // the difference for you to sneak against the enemy
             int sFormula = sneakDif * 250;
             if (Math.Abs((rnd.Next(1000) + 1) - (rnd.Next(1000) + 1)) < sFormula)
             {
@@ -88,10 +92,10 @@ namespace OregonXDayZ
             }
             else
             {
-                Console.WriteLine("You faild the sneak");
+                Console.WriteLine("You failed the sneak");
                 user.changeHealth(enemy.attack*10);
                 int HP = user.getHealth();
-                Console.WriteLine("You have taken " + enemy.attack + " damage, your health is now " + HP);
+                Console.WriteLine("You have taken " + enemy.attack*10 + " damage, your health is now " + HP);
                 Console.WriteLine("You must now fight");
                 Console.ReadLine();
                 enemy.goAttack(myAttack, enemy.attack, user, enemy);
